@@ -1,0 +1,211 @@
+/* Import Font Dancing Script */
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+* {
+    margin: 0;
+}
+
+
+/* Main */
+.main {
+    margin-top: 2%;
+    margin-left: 29%;
+    font-size: 28px;
+    padding: 0 10px;
+    width: 58%;
+}
+
+.main h2 {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.main .card {
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 1px 1px 8px 0 grey;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 50px;
+}
+
+.main .card table {
+    border: none;
+    font-size: 16px;
+    height: 270px;
+    width: 80%;
+}
+
+.edit {
+    position: absolute;
+    color: #e7e7e8;
+    right: 14%;
+}
+
+.buttons-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+}
+
+
+.bi-x {
+    font-size: 3rem; /* Ajustez la taille selon vos besoins */
+    font-weight: bold;
+    color:#333333;/* Met en gras */
+    text-shadow: 2px 2px 4px #888888;
+    padding-left: 70px;
+    margin-top: -15px;
+}
+
+
+
+
+.profil-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #888888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px 20px 0px;
+    float: left;
+    shape-outside: circle();
+}
+
+.profil-img i {
+    font-size: 24px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2px;
+
+}
+.smaller-text {
+    font-size:  16px; /* ou la taille de police que vous préférez */
+}
+/* Style pour la modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+
+    padding: 20px;
+    width: 100%;
+
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+.bi-x {
+    font-size: 2rem; /* Ajustez la taille selon vos besoins */
+    font-weight: bold; /* Met en gras */
+}
+
+.buttonExit {
+    margin-left: 700px;
+    margin-top: -50px;
+    width: 20px;
+    height: 20px; /* Hauteur égale à la largeur pour former un cercle */
+    font-size: 0.9rem;
+    padding: 15px;
+    border: none;
+    border-radius: 50%; /* Utilisez 50% pour créer un cercle */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;}
+.custom-span {
+    font-size: 14px;
+    color: blue;
+    position: relative;
+    top: -15px;/* Ajustez la valeur négative selon vos besoins */
+    display: inline-block; /* Assurez-vous que le span se comporte comme un bloc en ligne */
+}
+.post-image {
+    margin-top: -40px; /* Espacement avec le texte */
+    text-align: center; /* Centrer l'image */
+}
+
+.post-image img {
+    max-width: 60%; /* Pour s'assurer que l'image reste dans le conteneur */
+    height: auto; /* Pour préserver le ratio hauteur/largeur */
+}
+
+textarea:focus{
+    border-bottom: 1px solid #8C52FF;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 45px 45px;
+}
+
+.button {
+    width: 30%;
+    margin-right: 40px;
+    height: auto;/* Ajustez cette valeur selon l'espace désiré */
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+}
+.button-container :hover{
+    background-color:#ff8896;
+}
+.button :hover{
+    color:black;
+}
+
+.gray-button {
+    background-color: #aaaaaa;
+}
+
+.red-button {
+    background-color: red;
+}
+.bi-exclamation-triangle-fill {
+    font-size: 5rem; /* Taille de police agrandie */
+    display: flex; /* Centrer l'icône */
+    margin: 0 auto; /* Centrer l'icône horizontalement */
+    color: red; /* Couleur rouge */
+    margin-right: 300px; /* Espacement à droite */
+    text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+h5:hover{
+    color: darkred;
+    text-shadow: 2px 2px 4px #888888;
+}
+.centered-text {
+    text-align: center;
+}

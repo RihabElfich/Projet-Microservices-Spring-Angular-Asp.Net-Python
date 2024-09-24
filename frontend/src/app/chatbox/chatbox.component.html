@@ -1,0 +1,76 @@
+
+<section  class="Chat">
+    <div class="ChatHead">
+      <li class="group">
+        <div class="avatar"><i class="bi bi-person-circle"></i></div>
+        <p class="GroupName">{{this.route.snapshot.params["email"]}}</p>
+        
+
+      </li>
+      <div class="callGroup" (click)="startVideoCall()">
+        <i class="bi bi-telephone-fill"></i>
+        <i class="bi bi-camera-video-fill"></i>
+
+      </div>
+    </div>
+    <div   class="MessageContainer" *ngFor="let message of  this.chatService.messages$ | async">
+      <div #scrollMe 
+      [ngClass]="{'incoming_msg': message.user != me, 'outgoing_msg': message.user === me}">
+      <div *ngIf="message.user != me" class="incoming_msg_img">
+      
+      </div>
+      <div *ngIf="message.typemessage === 'message'">
+      
+      <div *ngIf="message.user != me" class="message you">
+        <div class="received_withd_msg">
+          <p class="messageContent"> {{message.message}}</p>
+          <div class="messageDetails">{{message.user}} | {{message.messageTime | date: 'medium'}}<div class="messageTime">3:21 PM</div>
+          <i class="fa-solid fa-check"></i></div>
+          
+        </div>
+      </div>
+      <div *ngIf="message.user === me" class="message me">
+        <p class="messageContent">{{message.message}}</p>
+        <div class="messageDetails">
+          <div class="messageTime"> {{message.user}} | {{message.messageTime | date: 'medium'}}</div>
+          <i class="fa-solid fa-check"></i>
+        </div>
+        
+      </div>
+    </div>
+    <div *ngIf="message.typemessage === 'fichier'">
+      <div *ngIf="message.user != me" class="received_file">
+       
+        <a (click)="generateDownload1Link(message.message)" >
+          <p>{{message.message}}</p>
+        </a>
+          <span class="time_date ">{{message.user}} | {{message.messageTime | date: 'medium'}}</span>
+       
+      </div>
+      <div *ngIf="message.user === me" class="sent_file">
+       
+        <a (click)=" generateDownload1Link(message.message)" >
+          <p>{{message.message}}</p>
+        </a>
+        <span class="time_date ">{{message.user}} | {{message.messageTime | date: 'medium'}}</span>
+      </div>
+      </div>
+    </div>
+     
+    </div>
+    <form id="MessageForm">
+      <input [(ngModel)]="this.inputMessage" name="inputmessage" type="text" >
+      <button class="Send" (click)="send()">
+        <i class="bi bi-send-fill"></i>
+      </button>
+      <label class="Send">
+        <input type="file" accept="image/*" id="image" name="image" style="display:none;" (change)="onFileSelected($event)">
+        <i class="bi bi-paperclip"></i>
+      </label>
+
+     
+    </form>
+  </section>
+
+
+

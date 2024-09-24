@@ -1,0 +1,169 @@
+<div class="parent">
+  <div class="header">
+    <div class="header2">
+      <div class="sub1">
+        <img src="assets/logo.png" alt="Avatar" class="avatar-image">
+      </div>
+      <div class="sub2">
+        <ul>
+          <li><a href="" (click)="redirectToHome()"> Accueil</a></li>
+          <li><a href="">À propos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    <div class="title">Inscription</div>
+
+    <form action="#">
+      <div class="user_details">
+        <div class="input_pox">
+          <span class="datails">Email</span>
+          <div class="form-control">
+            <i class="bi bi-envelope-open-fill"></i>
+            <input type="text" placeholder="Saisir votre email" [(ngModel)]="User.email" name="email" required>
+          </div>
+
+        </div>
+
+        <div class="input_pox">
+          <span class="datails">Telephone</span>
+          <div class="form-control">
+            <i class="bi bi-telephone-fill"></i>
+            <input type="text" placeholder="Saisir votre Numero" [(ngModel)]="Investisseur.tel" name="telephon" required>
+          </div>
+        </div>
+        <div class="input_pox">
+          <span class="datails"> Mot de Passe</span>
+          <div class="form-control">
+            <i class="bi bi-lock-fill"></i>
+            <input type="text" placeholder=" Mot de passe " [(ngModel)]="User.password" name="password" required>
+          </div>
+          <i class="self-stretch relative">
+            Utilisez 8 caractères ou plus avec un mélange de lettres, de
+            chiffres et de symboles.
+          </i>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Confirmer Mot de Passe</span>
+          <div class="form-control">
+            <i class="bi bi-lock-fill"></i>
+            <input type="text" placeholder="Confirmer Mot de passe" [(ngModel)]="User.confirmPassword" name="confirmed_password" required>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="gender_details">
+        <input type="radio" name="role" id="Invest" (change)="choix='Invest'" (change)="onHeightChange($event)">
+        <input type="radio" name="role" id="startup" (change)="choix='startup'" (change)="onHeightChange($event)">
+        <span class="gender_title"> Êtes-vous??</span>
+        <div class="category">
+          <label for="Invest">
+            <span class="dot one" ></span>
+            <span class="gender">Invertisseur</span>
+          </label>
+          <label for="startup">
+            <span class="dot two"></span>
+            <span class="gender">Start-up</span>
+          </label>
+        </div>
+      </div>
+
+    </form>
+    <div class="title" *ngIf="choix === 'Invest'">Details</div>
+    <form *ngIf="choix === 'Invest'" action="#" >
+      <div class="user_details">
+        <div class="input_pox">
+          <span class="datails">Nom</span>
+          <input type="text" placeholder="Saisir votre nom" [(ngModel)]="Investisseur.nom" name="nom" required>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Prenom</span>
+          <input type="text" placeholder="Saisir votre prenom" [(ngModel)]="Investisseur.prenom" name="prenom" required>
+        </div>
+        <div class="input_pox">
+          <span class="datails">CIN</span>
+          <input type="text" placeholder="Saisir Votre CIN" [(ngModel)]="Investisseur.cin" name="cin" required>
+        </div>
+
+      </div>
+      <div class="user_details1">
+        <div class="input_box">
+          <span class="details"> Description du profile</span>
+          <textarea placeholder="Voulez-vous parler de votre experiences??" [(ngModel)]="Investisseur.profilDescription" name="profilDescription" ></textarea>
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button violet-button">
+          <input type="submit" value="Enregistrer" (click)="onSubmit()">
+        </div>
+        <div class="button red-button">
+          <input type="submit" value="Reset">
+        </div>
+      </div>
+    </form>
+    <div class="title" *ngIf="choix === 'startup'">Details</div>
+    <form   *ngIf="choix === 'startup'" action="#">
+      <div class="user_details">
+        <div class="input_pox">
+          <span class="datails">Nom</span>
+          <input type="text" placeholder=" le nom officiel de start-up" [(ngModel)]="Startup.nomstr" name="nomstr" required>
+        </div>
+
+        <div class="input_pox">
+          <span class="datails">Fondateur</span>
+          <input type="text" placeholder=" Votre Nom" [(ngModel)]="Startup.fondateur" name="fondateur" required>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Domain d'activité</span>
+          <input type="text" placeholder="Domain d'activité" [(ngModel)]="Startup.domaine" name="domaine" required>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Capacité</span>
+          <input type="number" placeholder=" Capacité d'employeur" [(ngModel)]="Startup.capacite" name="capacite" required>
+        </div>
+
+        <div class="input_pox">
+          <span class="datails">Capital</span>
+          <input type="number" placeholder="Votre Capital"[(ngModel)]="Startup.capital" name="capital" required>
+        </div>
+        <div class="input_pox">
+          <span class="datails">Site web</span>
+          <input type="text" placeholder=" Site web" [(ngModel)]="Startup.siteweb" name="siteweb" required>
+
+        </div>
+        <div class="input_pox">
+          <span class="datails">Ville</span>
+          <input type="text" placeholder=" Votre ville" [(ngModel)]="Startup.ville" name="ville" required>
+        </div>
+        <div class="input_pox">
+          <span class="datails ">Adresse</span>
+          <input type="text" placeholder=" Votre adresse" [(ngModel)]="Startup.lieu" name="lieu" required>
+        </div>
+      </div>
+      <div class="user_details1">
+        <div class="input_box">
+          <span class="details">Description</span>
+          <textarea placeholder="Voulez-vous partager de votre experiences??" [(ngModel)]="Startup.description" name="description" ></textarea>
+        </div>
+      </div>
+      <div class="button-container">
+        <div class="button violet-button">
+          <input type="submit" value="Enregistrer" (click)="onSubmit1()">
+        </div>
+        <div class="button red-button">
+          <input type="submit" value="Reset">
+        </div>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
